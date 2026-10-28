@@ -1,0 +1,31 @@
+
+> marketgo@1.0.0 test:db
+> node --test "supabase/tests/*.test.mjs"
+
+▶ leitura e permissões
+  ✔ usuário logado lê lojas e só os produtos ativos (122.7949ms)
+  ✔ o app não consegue inserir pedidos diretamente (69.4876ms)
+  ✔ visitante anon não executa as funções (10.5162ms)
+✔ leitura e permissões (12435.3498ms)
+▶ create_order
+  ✔ calcula o total no servidor e guarda os itens como snapshot (185.7521ms)
+  ✔ respeita o pedido mínimo da loja (34.4413ms)
+  ✔ recusa loja fechada (31.2368ms)
+  ✔ recusa itens inválidos: outra loja, inativo, quantidade e duplicados (143.0934ms)
+  ✔ valida carrinho vazio, login, endereço e pagamento (88.1563ms)
+  ✔ exige que o troco em dinheiro cubra o total e ignora troco nos outros meios (111.7551ms)
+✔ create_order (604.1605ms)
+▶ privacidade e status
+  ✔ cada usuário só vê os próprios pedidos e itens (92.4264ms)
+  ✔ o pedido avança na ordem correta e para em entregue (106.2117ms)
+  ✔ outro usuário não avança nem cancela o pedido alheio (77.1458ms)
+  ✔ só cancela enquanto o pedido está recebido (106.9391ms)
+✔ privacidade e status (384.4418ms)
+ℹ tests 13
+ℹ suites 3
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15554.974

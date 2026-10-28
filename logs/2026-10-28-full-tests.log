@@ -1,0 +1,43 @@
+
+> marketgo@1.0.0 test
+> jest && node --test "supabase/tests/*.test.mjs"
+
+node.exe :
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+Test Suites: 5 passed, 5 total
+Tests:       37 passed, 37 total
+Snapshots:   0 total
+Time:        5.33 s, estimated 11 s
+Ran all test suites.
+▶ leitura e permissões
+  ✔ usuário logado lê lojas e só os produtos ativos (36.3744ms)
+  ✔ o app não consegue inserir pedidos diretamente (14.9042ms)
+  ✔ visitante anon não executa as funções (5.3995ms)
+✔ leitura e permissões (5465.9691ms)
+▶ create_order
+  ✔ calcula o total no servidor e guarda os itens como snapshot (56.3053ms)
+  ✔ respeita o pedido mínimo da loja (9.1714ms)
+  ✔ recusa loja fechada (5.2052ms)
+  ✔ recusa itens inválidos: outra loja, inativo, quantidade e duplicados (37.242ms)
+  ✔ valida carrinho vazio, login, endereço e pagamento (33.8204ms)
+  ✔ exige que o troco em dinheiro cubra o total e ignora troco nos outros meios (33.2549ms)
+✔ create_order (176.2451ms)
+▶ privacidade e status
+  ✔ cada usuário só vê os próprios pedidos e itens (38.8998ms)
+  ✔ o pedido avança na ordem correta e para em entregue (53.1709ms)
+  ✔ outro usuário não avança nem cancela o pedido alheio (25.2292ms)
+  ✔ só cancela enquanto o pedido está recebido (46.3026ms)
+✔ privacidade e status (164.1332ms)
+ℹ tests 13
+ℹ suites 3
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6338.5543

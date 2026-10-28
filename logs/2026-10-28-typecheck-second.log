@@ -1,0 +1,28 @@
+
+> marketgo@1.0.0 typecheck
+> tsc --noEmit
+
+app/(app)/(tabs)/_layout.tsx(25,36): error TS2322: Type '({ color, size }: { color: string; size: number; }) => JSX.Element' is not assignable to type '(props: { focused: boolean; color: ____ColorValue_Internal; size: number; }) => ReactNode'.
+  Types of parameters '__0' and 'props' are incompatible.
+    Type '{ focused: boolean; color: ____ColorValue_Internal; size: number; }' is not assignable to type '{ color: string; size: number; }'.
+      Types of property 'color' are incompatible.
+        Type '____ColorValue_Internal' is not assignable to type 'string'.
+          Type 'null' is not assignable to type 'string'.
+app/(app)/(tabs)/_layout.tsx(31,11): error TS2322: Type '({ color, size }: { color: string; size: number; }) => JSX.Element' is not assignable to type '(props: { focused: boolean; color: ____ColorValue_Internal; size: number; }) => ReactNode'.
+  Types of parameters '__0' and 'props' are incompatible.
+    Type '{ focused: boolean; color: ____ColorValue_Internal; size: number; }' is not assignable to type '{ color: string; size: number; }'.
+      Types of property 'color' are incompatible.
+        Type '____ColorValue_Internal' is not assignable to type 'string'.
+          Type 'null' is not assignable to type 'string'.
+app/(app)/(tabs)/_layout.tsx(38,38): error TS2322: Type '({ color, size }: { color: string; size: number; }) => JSX.Element' is not assignable to type '(props: { focused: boolean; color: ____ColorValue_Internal; size: number; }) => ReactNode'.
+  Types of parameters '__0' and 'props' are incompatible.
+    Type '{ focused: boolean; color: ____ColorValue_Internal; size: number; }' is not assignable to type '{ color: string; size: number; }'.
+      Types of property 'color' are incompatible.
+        Type '____ColorValue_Internal' is not assignable to type 'string'.
+          Type 'null' is not assignable to type 'string'.
+app/(app)/(tabs)/_layout.tsx(42,37): error TS2322: Type '({ color, size }: { color: string; size: number; }) => JSX.Element' is not assignable to type '(props: { focused: boolean; color: ____ColorValue_Internal; size: number; }) => ReactNode'.
+  Types of parameters '__0' and 'props' are incompatible.
+    Type '{ focused: boolean; color: ____ColorValue_Internal; size: number; }' is not assignable to type '{ color: string; size: number; }'.
+      Types of property 'color' are incompatible.
+        Type '____ColorValue_Internal' is not assignable to type 'string'.
+          Type 'null' is not assignable to type 'string'.

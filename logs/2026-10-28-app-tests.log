@@ -1,0 +1,32 @@
+
+> marketgo@1.0.0 test:app
+> jest
+
+node.exe : FAIL supabase/tests/db.test.mjs
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (FAIL supabase/tests/db.test.mjs:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  ● Test suite failed to run
+
+    Must use import to load ES Module:
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\supabase\tests\db.test.mjs
+
+    The file contains ESM syntax (import/export) that could not be executed as CommonJS. Either:
+      - Configure a transform (e.g. babel-jest) that compiles this file to CommonJS (see
+https://jestjs.io/docs/code-transformation)
+      - If the file is in "node_modules", allow it to be transformed by adjusting "transformIgnorePatterns" (see
+https://jestjs.io/docs/configuration#transformignorepatterns-arraystring)
+      - Use Node v24.9+ where Jest supports require(esm) natively (see
+https://jestjs.io/docs/ecmascript-modules#require-of-esm)
+
+      at createRequireEsmError (node_modules/jest-runtime/build/index.js:452:17)
+
+
+Test Suites: 1 failed, 5 passed, 6 total
+Tests:       37 passed, 37 total
+Snapshots:   0 total
+Time:        91.754 s
+Ran all test suites.

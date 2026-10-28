@@ -1,0 +1,70 @@
+Data local: 2026-10-28
+Etapa: instalação e compatibilidade de dependências
+
+Comando 1:
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants @expo/vector-icons @react-native-async-storage/async-storage react-native-url-polyfill
+
+Saída observada:
+› Installing 7 SDK 58.0.0 compatible native modules and 1 other package using npm
+> npm install --save react-native-url-polyfill
+npm warn ERESOLVE overriding peer dependency
+
+added 65 packages, removed 8 packages, and audited 522 packages in 27s
+
+45 packages are looking for funding
+  run `npm fund` for details
+8 vulnerabilities (5 low, 3 high)
+To address issues that do not require attention, run:
+  npm audit fix
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+Run `npm audit` for details.
+› Added config plugin: expo-router
+
+Comando 2 (primeira tentativa):
+npm install @supabase/supabase-js @tanstack/react-query react-hook-form zod @hookform/resolvers
+
+Trecho do erro observado (não é o arquivo bruto completo do npm):
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: react-dom@19.3.1
+npm error Found: react@19.3.0
+npm error node_modules/react
+npm error   peer react@"*" from @expo/dom-webview@58.0.2
+npm error   node_modules/@expo/dom-webview
+npm error Could not resolve dependency:
+npm error peer react@"^19.3.1" from react-dom@19.3.1
+npm error node_modules/react-dom
+npm error   peer react-dom@"^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc" from @radix-ui/react-collection@1.2.0
+npm error Could not resolve dependency:
+npm error peer react@"^19.3.1" from react-dom@19.3.1
+npm error Conflicting peer dependency: react@19.3.1
+npm error node_modules/react
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+
+Diagnóstico: `react-dom` resolvia para 19.3.1 enquanto o projeto usa React 19.3.0, quebrando o
+peer dependency durante a instalação. A tentativa inicial não alterou o package.json.
+
+Resposta/ação da IA: consultar a compatibilidade do SDK e instalar `react-dom` e `react-native-web`
+com `npx expo install`, em vez de contornar o conflito com `--force` ou `--legacy-peer-deps`.
+
+Comando de correção:
+npx expo install react-dom react-native-web
+npm install @supabase/supabase-js @tanstack/react-query react-hook-form zod @hookform/resolvers
+npm install -D jest-expo jest @types/jest prettier @electric-sql/pglite
+
+Saída observada após a correção:
+› Installing 2 SDK 58.0.0 compatible native modules using npm
+> npm install
+added 19 packages, changed 1 package, and audited 541 packages in 11s
+added 15 packages, changed 1 package, and audited 556 packages in 16s
+added 563 packages, and audited 1119 packages in 1m
+14 vulnerabilities (11 low, 3 high)
+
+Resultado: as dependências foram instaladas sem repetir o ERESOLVE. Os avisos de auditoria foram
+emitidos pelo npm; não foi executado `npm audit` neste ponto, portanto a lista detalhada ainda não
+foi investigada.

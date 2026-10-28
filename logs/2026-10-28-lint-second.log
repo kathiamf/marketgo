@@ -1,0 +1,59 @@
+
+> marketgo@1.0.0 lint
+> eslint .
+
+
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\app\(app)\(tabs)\_layout.tsx
+  8:10  error  Component definition is missing display name  react/display-name
+
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\app\(app)\checkout.tsx
+  37:19  warning  Compilation Skipped: Use of incompatible library
+
+This API returns functions which cannot be memoized without leading to stale UI. To prevent this, by default React Compiler will skip memoizing this component/hook. However, you may see issues if values from this API are passed to other components/hooks that are memoized.
+
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\app\(app)\checkout.tsx:37:19
+  35 |     },
+  36 |   });
+> 37 |   const payment = watch('payment');
+     |                   ^^^^^ React Hook Form's `useForm()` API returns a `watch()` function which cannot be memoized safely.
+  38 |
+  39 |   useEffect(() => {
+  40 |     if (lastAddress.data && !prefilled.current) {  react-hooks/incompatible-library
+
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\src\context\AuthContext.tsx
+  30:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\src\context\AuthContext.tsx:30:7
+  28 |   useEffect(() => {
+  29 |     if (!isSupabaseConfigured) {
+> 30 |       setLoading(false);
+     |       ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  31 |       return;
+  32 |     }
+  33 |  react-hooks/set-state-in-effect
+
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\src\context\CartContext.tsx
+  54:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo\src\context\CartContext.tsx:54:5
+  52 |   useEffect(() => {
+  53 |     let cancelled = false;
+> 54 |     setLoadedFor(null);
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  55 |     setCartState(EMPTY_CART);
+  56 |     if (!key) return;
+  57 |  react-hooks/set-state-in-effect
+
+✖ 4 problems (3 errors, 1 warning)

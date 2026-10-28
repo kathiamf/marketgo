@@ -1,0 +1,10 @@
+Starting project at C:\Users\kathi\OneDrive\Documentos\Analise_e_Desenvolvimento_de_Sistemas\marketgo
+Metro is running in CI mode, reloads are disabled. Remove CI=true to enable watch mode.
+Starting Metro Bundler
+
+Waiting on http://localhost:8081
+
+Logs for your project will appear below.
+TypeScript: The tsconfig.json#include property has been updated
+Web Bundled 13815ms node_modules\expo-router\entry.js (1186 modules)
+Web  INFO  %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

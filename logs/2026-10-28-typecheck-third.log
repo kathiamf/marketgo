@@ -1,0 +1,12 @@
+
+> marketgo@1.0.0 typecheck
+> tsc --noEmit
+
+app/(app)/(tabs)/_layout.tsx(21,53): error TS2322: Type 'string | number | NativeColorValue' is not assignable to type 'string | NativeColorValue | undefined'.
+  Type 'number' is not assignable to type 'string | NativeColorValue | undefined'.
+app/(app)/(tabs)/_layout.tsx(30,47): error TS2322: Type 'string | number | NativeColorValue' is not assignable to type 'string | NativeColorValue | undefined'.
+  Type 'number' is not assignable to type 'string | NativeColorValue | undefined'.
+app/(app)/(tabs)/_layout.tsx(41,50): error TS2322: Type 'string | number | NativeColorValue' is not assignable to type 'string | NativeColorValue | undefined'.
+  Type 'number' is not assignable to type 'string | NativeColorValue | undefined'.
+app/(app)/(tabs)/_layout.tsx(50,49): error TS2322: Type 'string | number | NativeColorValue' is not assignable to type 'string | NativeColorValue | undefined'.
+  Type 'number' is not assignable to type 'string | NativeColorValue | undefined'.

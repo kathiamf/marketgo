@@ -1,0 +1,36 @@
+
+> marketgo@1.0.0 typecheck
+> tsc --noEmit
+
+app/(app)/(tabs)/_layout.tsx(10,39): error TS2322: Type '____ColorValue_Internal' is not assignable to type 'string | NativeColorValue | undefined'.
+  Type 'null' is not assignable to type 'string | NativeColorValue | undefined'.
+app/(app)/(tabs)/index.tsx(76,53): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: RefreshControlProps): RefreshControl', gave the following error.
+    Type '() => Promise<QueryObserverResult<Store[], Error>>' is not assignable to type '() => void | Promise<void>'.
+      Type 'Promise<QueryObserverResult<Store[], Error>>' is not assignable to type 'void | Promise<void>'.
+        Type 'Promise<QueryObserverResult<Store[], Error>>' is not assignable to type 'Promise<void>'.
+          Type 'QueryObserverResult<Store[], Error>' is not assignable to type 'void'.
+            Type 'QueryObserverRefetchErrorResult<Store[], Error>' is not assignable to type 'void'.
+  Overload 2 of 2, '(props: RefreshControlProps, context: any): RefreshControl', gave the following error.
+    Type '() => Promise<QueryObserverResult<Store[], Error>>' is not assignable to type '() => void | Promise<void>'.
+      Type 'Promise<QueryObserverResult<Store[], Error>>' is not assignable to type 'void | Promise<void>'.
+        Type 'Promise<QueryObserverResult<Store[], Error>>' is not assignable to type 'Promise<void>'.
+          Type 'QueryObserverResult<Store[], Error>' is not assignable to type 'void'.
+            Type 'QueryObserverRefetchErrorResult<Store[], Error>' is not assignable to type 'void'.
+app/(app)/(tabs)/orders.tsx(61,53): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: RefreshControlProps): RefreshControl', gave the following error.
+    Type '() => Promise<QueryObserverResult<Order[], Error>>' is not assignable to type '() => void | Promise<void>'.
+      Type 'Promise<QueryObserverResult<Order[], Error>>' is not assignable to type 'void | Promise<void>'.
+        Type 'Promise<QueryObserverResult<Order[], Error>>' is not assignable to type 'Promise<void>'.
+          Type 'QueryObserverResult<Order[], Error>' is not assignable to type 'void'.
+            Type 'QueryObserverRefetchErrorResult<Order[], Error>' is not assignable to type 'void'.
+  Overload 2 of 2, '(props: RefreshControlProps, context: any): RefreshControl', gave the following error.
+    Type '() => Promise<QueryObserverResult<Order[], Error>>' is not assignable to type '() => void | Promise<void>'.
+      Type 'Promise<QueryObserverResult<Order[], Error>>' is not assignable to type 'void | Promise<void>'.
+        Type 'Promise<QueryObserverResult<Order[], Error>>' is not assignable to type 'Promise<void>'.
+          Type 'QueryObserverResult<Order[], Error>' is not assignable to type 'void'.
+            Type 'QueryObserverRefetchErrorResult<Order[], Error>' is not assignable to type 'void'.
+src/services/orders.ts(5,73): error TS2345: Argument of type '{ p_store_id: string; p_items: { product_id: string; quantity: number; }[]; p_payment: PaymentMethod; p_change_for: number | null; p_street: string; p_number: string; p_neighborhood: string; p_complement: string; }' is not assignable to parameter of type 'undefined'.
+src/services/orders.ts(42,12): error TS2698: Spread types may only be created from object types.
+src/services/orders.ts(46,68): error TS2345: Argument of type '{ p_order_id: string; }' is not assignable to parameter of type 'undefined'.
+src/services/orders.ts(51,67): error TS2345: Argument of type '{ p_order_id: string; }' is not assignable to parameter of type 'undefined'.
